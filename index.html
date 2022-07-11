@@ -3,7 +3,29 @@
   <head>
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
-    <title>Document</title>
+    <title>Library</title>
   </head>
-  <body></body>
+  <body>
+    <dialog id="book-dialog">
+      <form id="book-form" method="dialog">
+        <label for="title">Book Title</label>
+        <input name="title" id="title" type="text" />
+
+        <label for="author">Book Author</label>
+        <input name="author" id="author" type="text" />
+
+        <label for="page-count">Page Count</label>
+        <input name="page-count" id="page-count" type="number" />
+
+        <label for="have-read">Have Read?</label>
+        <input type="checkbox" name="have-read" id="have-read" />
+
+        <button id="create-book">Create Book</button>
+      </form>
+    </dialog>
+
+    <button id="add-book">Add Book</button>
+
+    <div id="book-container"></div>
+  </body>
 </html>
