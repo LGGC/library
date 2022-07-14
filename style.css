@@ -1,0 +1,86 @@
+body {
+  padding: 25px;
+}
+
+form {
+  height: fit-content;
+  width: min-content;
+  background-color: white;
+  justify-content: center;
+  padding: 2.5vh 5vw;
+  font-weight: bold;
+  font-size: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5vw;
+}
+
+form > div:last-of-type {
+  flex-direction: row;
+}
+
+form > div {
+  margin: 2.5vh 0;
+  font-weight: normal;
+  font-size: 24px;
+  display: flex;
+  align-items: baseline;
+  flex-direction: column;
+  gap: 0.5vh;
+  flex-basis: 100%;
+}
+
+input {
+  font-size: 20px;
+}
+
+input[type="checkbox"] {
+  margin-top: 10px;
+}
+
+dialog {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+button {
+  padding: 15px 25px;
+  background-color: #719ece;
+  border: 2px solid #719ece;
+  border-radius: 15px;
+  box-shadow: 0 0 10px gray;
+  color: white;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
+button:hover {
+  background-color: white;
+  color: #719ece;
+}
+
+.cardBtn {
+  padding: 5px;
+}
+
+.book-card {
+  padding: 25px;
+  background-color: white;
+  border-bottom: #719ece 5px solid;
+  width: fit-content;
+  border-radius: 25px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  width: 150px;
+  text-align: center;
+}
+p {
+  font-size: 1.2rem;
+}
+#book-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  gap: 10px;
+  justify-content: center;
+}

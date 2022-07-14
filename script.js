@@ -35,10 +35,11 @@ function addBooksToCoontainer() {
 
   bookContainer.replaceChildren();
 
+  let index = 0;
   myLibrary.forEach((book) => {
     const cardDiv = document.createElement("div");
     cardDiv.classList.add("book-card");
-
+    cardDiv.dataset.indexNumber = index++;
     const titleP = document.createElement("p");
     titleP.textContent = "Title: " + book.title;
 
@@ -51,10 +52,38 @@ function addBooksToCoontainer() {
     const haveReadP = document.createElement("p");
     haveReadP.textContent = "Have Read: " + book.haveRead;
 
+    const buttonContainer = document.createElement("div");
+    buttonContainer.style.display = "flex";
+    buttonContainer.style.gap = "10px";
+
+    const removeButton = document.createElement("button");
+    removeButton.addEventListener("click", removeBook);
+    removeButton.classList.add("cardBtn");
+    removeButton.textContent = "🗑️";
+
+    const readButton = document.createElement("button");
+    readButton.addEventListener("click", changeReadStatus);
+    readButton.classList.add("cardBtn");
+    readButton.textContent = "📖";
+
     bookContainer.appendChild(cardDiv);
     cardDiv.appendChild(titleP);
     cardDiv.appendChild(authorP);
     cardDiv.appendChild(pagesP);
     cardDiv.appendChild(haveReadP);
+    buttonContainer.appendChild(removeButton);
+    buttonContainer.appendChild(readButton);
+    cardDiv.appendChild(buttonContainer);
   });
+}
+
+function removeBook(e) {
+  myLibrary.splice(e.target.parentNode.parentNode.dataset.indexNumber, 1);
+  addBooksToCoontainer();
+}
+
+function changeReadStatus(e) {
+  myLibrary[e.target.parentNode.parentNode.dataset.indexNumber].haveRead =
+    !myLibrary[e.target.parentNode.parentNode.dataset.indexNumber].haveRead;
+  addBooksToCoontainer();
 }
