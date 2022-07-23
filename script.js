@@ -8,11 +8,13 @@ createBookBtn.addEventListener("click", addBookToLibrary);
 
 let myLibrary = [];
 
-function Book(title, author, pageNum, haveRead) {
-  this.title = title;
-  this.author = author;
-  this.pageNum = pageNum;
-  this.haveRead = haveRead;
+class Book {
+  constructor(title, author, pageNum, haveRead) {
+    this.title = title;
+    this.author = author;
+    this.pageNum = pageNum;
+    this.haveRead = haveRead;
+  }
 }
 
 function addBookToLibrary() {
